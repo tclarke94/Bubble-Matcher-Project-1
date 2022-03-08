@@ -11,13 +11,13 @@ body{
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    color: lightyellow;
+    /* background-color: lightyellow; */
     /* padding: 2px; */
 }
 
 .hiddenImage{
     background-color: rgb(233, 134, 233);
-    outline:maroon solid 5px;
+    outline:black solid 5px;
     width: 20vw;
     height: 20vh;   
     margin: 10px;
