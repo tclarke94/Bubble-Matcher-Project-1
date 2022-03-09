@@ -9,29 +9,29 @@
 //defines variables
 let hiddenImage = document.querySelectorAll('.hiddenImage');
 let turn = ''
-console.log(hiddenImage)
-
-let green = document.querySelectorAll('.green')
-let blue = document.querySelectorAll('.blue')
-let red = document.querySelectorAll('.red')
-let yellow = document.querySelectorAll('.yellow')
-let purple = document.querySelectorAll('.purple')
-let orange = document.querySelectorAll('.orange')
-
+// console.log(hiddenImage)
+var colors = [
+[green = document.querySelectorAll('.green')],
+[blue = document.querySelectorAll('.blue')],
+[red = document.querySelectorAll('.red')],
+[yellow = document.querySelectorAll('.yellow')],
+[purple = document.querySelectorAll('.purple')],
+[orange = document.querySelectorAll('.orange')],
+]
 
 
 //functions for each color class to display
 function colorGreen(){
     for(let i=0; i < green.length; i++)
     green[i].addEventListener('click',function (){
-       console.log('ppp')
+      
 
 green[i].style.backgroundColor = '#4daf7c'
         
     })
 }
 
-colorGreen()
+// colorGreen()
 
 function colorBlue(){
     for(let i=0; i < blue.length; i++)
@@ -40,7 +40,7 @@ function colorBlue(){
         blue[i].style.backgroundColor = '#2c82c9'
     })
 }
-colorBlue()
+// colorBlue()
 
 
 function colorRed(){
@@ -50,7 +50,7 @@ function colorRed(){
         red[i].style.backgroundColor = '#96281b'
     })
 }
-colorRed()
+// colorRed()
 
 
 function colorYellow(){
@@ -60,16 +60,16 @@ function colorYellow(){
         yellow[i].style.backgroundColor = '#f7ca18'
     })
 }
-colorYellow()
+// colorYellow()
 
-function colorpurple(){
+function colorPurple(){
     for(let i=0; i < purple.length; i++)
 
     purple[i].addEventListener('click', function (){
         purple[i].style.backgroundColor = '#a537fd'
     })
 }
-colorpurple()
+// colorPurple()
 
 function colorOrange(){
     for(let i=0; i < orange.length; i++)
@@ -78,9 +78,19 @@ function colorOrange(){
         orange[i].style.backgroundColor = '#d35400'
     })
 }
-colorOrange()
+// colorOrange()
 
+function colorRunner(){
+    colorGreen()
+    colorBlue()
+    colorRed()
+    colorYellow()
+    colorPurple()
+    colorOrange()
+    // console.log('success')
+}
 
+colorRunner()
 
 
 // function imageFlip(){
@@ -94,33 +104,19 @@ colorOrange()
 // }
 // imageFlip()
 
-//random color generator function, may not use
-// function randomNum(){
-// let a = Math.floor(Math.random() * 256)
-
-// }
-
-// function randomColor(){
-//     let b =randomNum(360);
-//     const c =randomNum(100);
-//     const d =randomNum(100);
-//     return `bcd (${b}deg, ${c}%, ${d}%)`
-// }
-
-// function randomPastel(){
-//     const b = randomColor(360);
-//     return `bcd(${b}deg, 100%, 90%)`;
-// }
 
 //This displays a color or image on the div when clicked
-function imageFlip(){
-for(let i=0; i < hiddenImage.length; i++)
+// function imageFlip(){
+// for(let i=0; i < hiddenImage.length; i++)
 
-hiddenImage[i].addEventListener('click', function () {
+// hiddenImage[i].addEventListener('click', function () {
     // if(hiddenImage==='click'){
-hiddenImage[i].style.backgroundColor = 'green'
-    console.log('ok')
-    })}
+//  if(hiddenImage[i].style.backgroundColor !== hiddenImage[i].style.backgroundColor )
+//     console.log('same')
+// else{
+//     (console.log('not same'))
+// }    
+// })}
     // if(hiddenImage.innerHTML === ''){
     //     hiddenImage.style.color = 'purple';
 
@@ -136,3 +132,125 @@ hiddenImage[i].style.backgroundColor = 'green'
 
 //I need only squares that are equal to remain face up when clicked. non matching 
 //squares need to flip back over
+
+//this will tell me if a green div has been clicked. I may use this to check all colors indivudually.
+
+//this is supposed to check all colors that are clicked but doesnt work
+// function colorChecker2(){
+//     for(let j=0; j == 12; j++)
+//     colors.addEventListener('click', () =>{
+//         console.log('sko')
+//         if(colors === colors){
+//             console.log('they match')
+//         }
+//     })
+
+// }
+// colorChecker2()
+
+
+//these check which color is clicked and return the color
+function greenChecker(){
+    for(let i=0; i < green.length; i++)
+    green[i].addEventListener('click', function (){
+        if(green === green){
+            console.log('its green')
+   
+                }
+            }
+        
+        
+    )}
+// greenChecker()
+
+
+
+function blueChecker(){
+    for(let i=0; i < blue.length; i++)
+    blue[i].addEventListener('click', function (){
+        if(blue === blue){
+            console.log('its blue')
+   
+                }
+            }
+        
+        
+    )}
+// blueChecker()
+
+function redChecker(){
+    for(let i=0; i < red.length; i++)
+    red[i].addEventListener('click', function (){
+        if(red === red){
+            console.log('its red')
+   
+                }
+            }
+        
+        
+    )}
+// redChecker()
+
+function yellowChecker(){
+    for(let i=0; i < yellow.length; i++)
+    yellow[i].addEventListener('click', function (){
+        if(yellow === yellow){
+            console.log('its yellow')
+   
+                }
+            }
+        
+        
+    )}
+// yellowChecker()
+
+function purpleChecker(){
+    for(let i=0; i < purple.length; i++)
+    purple[i].addEventListener('click', function (){
+        if(purple === purple){
+            console.log('its purple')
+   
+                }
+            }
+        
+        
+    )}
+// purpleChecker()
+
+function orangeChecker(){
+    for(let i=0; i < orange.length; i++)
+    orange[i].addEventListener('click', function (){
+if(orange[i] === orange[i]){
+            console.log('its orange')
+}else{
+                console.log('it is not orange')
+        
+    
+           
+            
+        
+        
+        }})}
+// orangeChecker()
+
+
+function colorChecker(){
+    greenChecker()
+    blueChecker()
+    redChecker()
+    yellowChecker()
+    purpleChecker()
+    orangeChecker()
+}
+
+colorChecker()
+
+function doubleCheck(){
+    for(let i=0;i==colors.length;i++)
+    colors[i].addEventListener('click', ()=>{
+    if (colors[i]  ){
+        console.log('same color')
+
+    }
+})}
+doubleCheck()
