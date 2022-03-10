@@ -10,14 +10,24 @@
 let hiddenImage = document.querySelectorAll('.hiddenImage');
 let turn = ''
 // console.log(hiddenImage)
-var colors = [
-[green = document.querySelectorAll('.green')],
-[blue = document.querySelectorAll('.blue')],
-[red = document.querySelectorAll('.red')],
-[yellow = document.querySelectorAll('.yellow')],
-[purple = document.querySelectorAll('.purple')],
-[orange = document.querySelectorAll('.orange')],
-]
+
+green = document.querySelectorAll('.green')
+blue = document.querySelectorAll('.blue')
+red = document.querySelectorAll('.red')
+yellow = document.querySelectorAll('.yellow')
+purple = document.querySelectorAll('.purple')
+orange = document.querySelectorAll('.orange')
+
+var colors = [[green],[blue],[red],[yellow],[purple],[orange]]
+
+// var colors = [
+// [green = document.querySelectorAll('.green')],
+// [blue = document.querySelectorAll('.blue')],
+// [red = document.querySelectorAll('.red')],
+// [yellow = document.querySelectorAll('.yellow')],
+// [purple = document.querySelectorAll('.purple')],
+// [orange = document.querySelectorAll('.orange')],
+// ]
 
 
 //functions for each color class to display
@@ -245,12 +255,28 @@ function colorChecker(){
 
 colorChecker()
 
-function doubleCheck(){
-    for(let i=0;i==colors.length;i++)
-    colors[i].addEventListener('click', ()=>{
-    if (colors[i]  ){
-        console.log('same color')
+// function doubleCheck(){
+//     for(let i=0;i<colors.length;i++)
+//     colors.addEventListener('click', ()=>{
+//     if (colors  ){
+//         console.log('same color')
 
-    }
-})}
-doubleCheck()
+//     }
+// })}
+// doubleCheck()
+
+
+//if both clicked divs have matching classes(colors) this should say they match
+
+function matcher(x,y){
+//    var color1 = document.getElementsByClassName('blue')
+//    var color2 =document.getElementsByClassName('blue')
+//    var x = color1.isEqualNode(color2);
+//    document.getElementsByClassName('blue').innerHTML = x;
+for(let i=0;i<colors.length;i++)
+if(colors[i] != colors[i]){
+console.log('not match')
+}
+}
+
+matcher()
