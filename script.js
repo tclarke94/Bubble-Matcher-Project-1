@@ -19,7 +19,11 @@ purple = document.querySelectorAll('.purple')
 orange = document.querySelectorAll('.orange')
 
 var colors = [[green],[blue],[red],[yellow],[purple],[orange]]
+var cards = []
 
+var guess1 = '';
+var guess2 = '';
+var count = 0;
 // var colors = [
 // [green = document.querySelectorAll('.green')],
 // [blue = document.querySelectorAll('.blue')],
@@ -29,6 +33,21 @@ var colors = [[green],[blue],[red],[yellow],[purple],[orange]]
 // [orange = document.querySelectorAll('.orange')],
 // ]
 
+function blah(){
+if(colors[0].innerHTML == colors[1].innerHTML && hiddenImage[0].innerHTML !== hiddenImage[1].innerHTML){
+    alert('match')
+}
+//     let firstCard = colors[0];
+// let secondCard = colors[1];
+// for(let i = 0; i < colors.length;i++)
+// colors.addEventListener('click', function (){
+//    if(colors[0] === colors[1] && firstCard !== secondCard)
+ 
+//     console.log(`match`)
+// })
+}
+
+blah()
 
 //functions for each color class to display
 function colorGreen(){
@@ -255,6 +274,14 @@ function colorChecker(){
 
 colorChecker()
 
+function match(){
+    let firstCard = colors[0];
+let secondCard = colors[1];
+    if(colorChecker(hiddenImage[0].innerHTML === hiddenImage[1].innerHTML && firstCard !== secondCard)){
+        alert('match')
+    }
+}
+// match()
 // function doubleCheck(){
 //     for(let i=0;i<colors.length;i++)
 //     colors.addEventListener('click', ()=>{
@@ -268,15 +295,37 @@ colorChecker()
 
 //if both clicked divs have matching classes(colors) this should say they match
 
-function matcher(x,y){
+function matcher(){
 //    var color1 = document.getElementsByClassName('blue')
 //    var color2 =document.getElementsByClassName('blue')
 //    var x = color1.isEqualNode(color2);
 //    document.getElementsByClassName('blue').innerHTML = x;
-for(let i=0;i<colors.length;i++)
-if(colors[i] != colors[i]){
-console.log('not match')
+// for(let i=0;i<colors.length;i++)
+// if(colors[i] !== colors[i]){
+// console.log('not match')
+
+// }
+let firstCard = colors[0]
+let secondCard = colors[1]
+if (hiddenImage[0].innerText === hiddenImage[1].innerText && firstCard !== secondCard){
+    alert ('match')
 }
 }
 
-matcher()
+// matcher()
+
+// let cardsId = [];
+// let cardSelect = [];
+// let cardsWon = 0;
+// let clicks = 0;
+
+
+// function checkMatches(){
+// let firstCard = colors[0];
+// let secondCard = colors[1];
+// if (colors[0] === colors[1] && firstCard !== secondCard){
+//     alert('match')
+// }
+// }
+
+// checkMatches()
