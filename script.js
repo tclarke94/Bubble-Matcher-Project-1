@@ -17,8 +17,10 @@ red = document.querySelectorAll('.red')
 yellow = document.querySelectorAll('.yellow')
 purple = document.querySelectorAll('.purple')
 orange = document.querySelectorAll('.orange')
-
-var colors = [[green],[blue],[red],[yellow],[purple],[orange]]
+let click1, click2 = 0
+let score = document.querySelector('.score')
+let total = 0
+var colors = [[green],[blue],[red],[yellow],[purple],[orange],[green], [blue], [red],[yellow],[purple],[orange]]
 var cards = []
 
 var guess1 = '';
@@ -47,16 +49,25 @@ if(colors[0].innerHTML == colors[1].innerHTML && hiddenImage[0].innerHTML !== hi
 // })
 }
 
-blah()
+// blah()
 
 //functions for each color class to display
 function colorGreen(){
     for(let i=0; i < green.length; i++)
     green[i].addEventListener('click',function (){
-      
+    green[i].style.backgroundColor = '#4daf7c'
+        if(click1){
+            if(click1.classList[2] === green[i].classList[2]){
+                total += 1
+                score.innerHTML = 'Score:' + total
+                click1 = 0
+                alert ('match found!')
 
-green[i].style.backgroundColor = '#4daf7c'
-        
+            }
+        }else{ click1 = green[i]
+            console.log(click1,classList[2])
+
+        }
     })
 }
 
@@ -67,6 +78,20 @@ function colorBlue(){
 
     blue[i].addEventListener('click', function (){
         blue[i].style.backgroundColor = '#2c82c9'
+        console.log(`${blue[i].classList[2]}`)
+        if(click1){
+            if(click1.classList[2] === blue[i].classList[2]){
+                total += 1
+                score.innerHTML = 'Score:' + total
+                console.log(score)
+                click1 = 0
+                alert ('match found!')
+
+            }
+
+        }else{ click1 = blue[i]
+        console.log(click1.classList[2])
+        }
     })
 }
 // colorBlue()
@@ -77,6 +102,20 @@ function colorRed(){
 
     red[i].addEventListener('click', function (){
         red[i].style.backgroundColor = '#96281b'
+        if(click1){
+            if(click1.classList[2] === red[i].classList[2]){
+                total += 1
+                score.innerHTML = 'Score:' + total
+                click1 = 0
+                alert ('match found!')
+
+            }
+        }else{ click1 = red[i]
+            console.log(click1,classList[2])
+
+        }
+        
+        
     })
 }
 // colorRed()
@@ -87,6 +126,18 @@ function colorYellow(){
 
     yellow[i].addEventListener('click', function (){
         yellow[i].style.backgroundColor = '#f7ca18'
+        if(click1){
+            if(click1.classList[2] === yellow[i].classList[2]){
+                total += 1
+                score.innerHTML = 'Score:' + total
+                click1 = 0
+                alert ('match found!')
+
+            }
+        }else{ click1 = yellow[i]
+            console.log(click1,classList[2])
+
+        }
     })
 }
 // colorYellow()
@@ -96,6 +147,17 @@ function colorPurple(){
 
     purple[i].addEventListener('click', function (){
         purple[i].style.backgroundColor = '#a537fd'
+        if(click1){
+            if(click1.classList[2] === purple[i].classList[2]){
+                total += 1
+                score.innerHTML = 'Score:' + total
+                click1 = 0
+                alert ('match found!')
+            }
+        }else{ click1 = purple[i]
+            console.log(click1,classList[2])
+
+        }
     })
 }
 // colorPurple()
@@ -105,6 +167,17 @@ function colorOrange(){
 
     orange[i].addEventListener('click', function (){
         orange[i].style.backgroundColor = '#d35400'
+        if(click1){
+            if(click1.classList[2] === orange[i].classList[2]){
+                total += 1
+                score.innerHTML = 'Score:' + total
+                click1 = 0
+                alert ('match found!')
+            }
+        }else{ click1 = orange[i]
+            console.log(click1,classList[2])
+
+        }
     })
 }
 // colorOrange()
@@ -121,17 +194,33 @@ function colorRunner(){
 
 colorRunner()
 
+let squareChosen = []
+let squareChosenId = []
+let squaresWon = []
 
-// function imageFlip(){
-//     // event.preventDefault()
 
-//     hiddenImage.addEventListener('click', ()=>{
-//         console.log('ok')
-//     })
+function checkMatch(){
+    let hiddenImage = document.querySelectorAll('.hiddenImage');
+    const firstClick = squareChosenId[0]
+    const secondClick = squareChosenId[1]
+
+    if (firstClick === secondClick){
+     colors[firstClick]
+     colors[secondClick]
+        alert ('match')
+    }
+}
+
+
+// checkMatch()
+
+function imageFlip(){
+
+ 
     
 
-// }
-// imageFlip()
+}
+imageFlip()
 
 
 //This displays a color or image on the div when clicked
@@ -274,58 +363,27 @@ function colorChecker(){
 
 colorChecker()
 
-function match(){
-    let firstCard = colors[0];
-let secondCard = colors[1];
-    if(colorChecker(hiddenImage[0].innerHTML === hiddenImage[1].innerHTML && firstCard !== secondCard)){
-        alert('match')
-    }
-}
-// match()
-// function doubleCheck(){
-//     for(let i=0;i<colors.length;i++)
-//     colors.addEventListener('click', ()=>{
-//     if (colors  ){
-//         console.log('same color')
-
+// function match(){
+//     let firstCard = colors[0];
+// let secondCard = colors[1];
+//     if(colorChecker(hiddenImage[0].innerHTML === hiddenImage[1].innerHTML && firstCard !== secondCard)){
+//         alert('match')
 //     }
-// })}
-// doubleCheck()
+// }
+
 
 
 //if both clicked divs have matching classes(colors) this should say they match
 
-function matcher(){
-//    var color1 = document.getElementsByClassName('blue')
-//    var color2 =document.getElementsByClassName('blue')
-//    var x = color1.isEqualNode(color2);
-//    document.getElementsByClassName('blue').innerHTML = x;
-// for(let i=0;i<colors.length;i++)
-// if(colors[i] !== colors[i]){
-// console.log('not match')
 
-// }
-let firstCard = colors[0]
-let secondCard = colors[1]
-if (hiddenImage[0].innerText === hiddenImage[1].innerText && firstCard !== secondCard){
-    alert ('match')
-}
-}
-
-// matcher()
-
-// let cardsId = [];
-// let cardSelect = [];
-// let cardsWon = 0;
-// let clicks = 0;
-
-
-// function checkMatches(){
-// let firstCard = colors[0];
-// let secondCard = colors[1];
-// if (colors[0] === colors[1] && firstCard !== secondCard){
-//     alert('match')
-// }
+// let firstCard = colors[0]
+// let secondCard = colors[1]
+// if (hiddenImage[0].innerText === hiddenImage[1].innerText && firstCard !== secondCard){
+//     alert ('match')
 // }
 
-// checkMatches()
+
+
+
+
+
